@@ -51,17 +51,19 @@ class ItrsseppnAssigner extends AppModel {
 
     // Find the primary campus.
     $i = Hash::extract($coPerson['Identifier'], '{n}[type=primarycampus]');
-    $pc = $i[0]['identifier'];
+    $pc = $i[0]['identifier'] ?? null;
 
     if(empty($pc)) {
+      $this->log("ItrsseppnAssigner no primarycampus Identifier found");
       throw new InvalidArgumentException(_txt('er.itrsseppnassigner.primarycampus'));
     }
 
     // Find the userPrincipalName.
     $i = Hash::extract($coPerson['Identifier'], '{n}[type=upn]');
-    $upn = $i[0]['identifier'];
+    $upn = $i[0]['identifier'] ?? null;
 
     if(empty($upn)) {
+      $this->log("ItrsseppnAssigner no upn Identifier found");
       throw new InvalidArgumentException(_txt('er.itrsseppnassigner.upn'));
     }
 
