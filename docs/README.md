@@ -51,7 +51,7 @@ Nothing is lowercased or otherwise changed.
 
 - If the person already has an Active ePPN Identifier, Registry skips the assignment and the plugin does not run.
 - The new ePPN is saved with status Active. Whether it can be used to log in to Registry is set on the Identifier Assignment, not by the plugin.
-- Registry tries the plugin's value once. If another record in the CO already has that ePPN, the assignment fails. No number is added to make it unique.
+- Registry tries the plugin's value once. If that ePPN is already in use in the CO, including by a non-Active ePPN on the same person, or an Identifier Validator rejects it, the assignment fails. No number is added to make it unique.
 
 ## Configuration
 
@@ -89,7 +89,7 @@ The plugin's messages are in `Lib/lang.php`.
 |---|---|---|
 | `No primary campus Identifier found` | The CO Person has no `primarycampus` Identifier. If both Identifiers are missing, only this message appears. | That Entra has a primary campus for the person and the Pipeline copies it. Then follow [Recovering](#recovering). |
 | `No userPrincipalName Identifier found` | The CO Person has no `upn` Identifier. | That the person's Org Identity from EntraSource has a `upn` and the Pipeline copies it. Then follow [Recovering](#recovering). |
-| `Failed to find a unique identifier to assign` | Registry's message when the ePPN the plugin built is already in use in the CO. | Which other record has that ePPN. |
+| `Failed to find a unique identifier to assign` | Registry's message when the ePPN the plugin built is already in use in the CO, possibly by a Suspended ePPN on the same person, or was rejected by an Identifier Validator. | Which record has that ePPN, including this person's non-Active Identifiers, and any Identifier Validators for type ePPN. |
 | `No eppn Identifier found` | The message from the CILogon user name assignment when the person has no ePPN. | Why the ePPN assignment failed, using the messages above. |
 
 ### Why does this person have an odd ePPN?
