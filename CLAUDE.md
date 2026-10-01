@@ -34,7 +34,9 @@ the problem and throws `InvalidArgumentException`.
 - The remaining directories (`Config`, `Console`, `Test`, `Locale`, `View`,
   `webroot`, and so on) hold only `empty` placeholder files from the plugin
   skeleton.
-- There is no `README.md` or `docs/` yet.
+- `docs/README.md`: the staff reference page, indexed from `README.md`.
+  `docs/plans/` holds planning artifacts and is not part of the staff
+  documentation.
 
 ## Coding Style & Conventions
 - Language: PHP version 8.3 is preferred.
@@ -61,15 +63,12 @@ the problem and throws `InvalidArgumentException`.
 ## Do's & Don'ts
 - Do: Respect existing code style and patterns but suggest alternatives
   that provide generally cleaner and more maintainable code.
-- Do: If documentation is added, follow the sibling ITRSS plugin repositories
-  (such as ItrssUidEnroller and ItrsscilogonAssigner): a staff reference page
-  at `docs/README.md`, indexed from `README.md`, with planning artifacts under
-  `docs/plans/`. Keep its section names (How it works, Configuration,
-  Troubleshooting, Assumptions and known gaps) aligned with those repositories
-  so the ITRSS solution architecture overview can link to them consistently.
-- Do: Once `docs/` exists, update it in the same pull request when a change
-  alters plugin behavior. Cite code by file and function name, not line
-  number.
+- Do: When a change alters plugin behavior, update `docs/README.md` in the
+  same pull request. Cite code by file and function name, not line number.
+  Keep its section names (How it works, Configuration, Troubleshooting,
+  Assumptions and known gaps) aligned with the sibling ITRSS plugin
+  repositories so the ITRSS solution architecture overview can link to them
+  consistently.
 - Do: If a change alters the generated ePPN format or the campus-to-scope map,
   say so to the developer. ItrsscilogonAssigner reads the CO Person's `eppn`
   Identifier, so such changes may affect it.
