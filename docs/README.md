@@ -8,7 +8,7 @@ This page is for CILogon staff who run the Registry and administer the ITRSS CO.
 
 - [ItrsscilogonAssigner](https://github.com/cilogon/ItrsscilogonAssigner): the plugin that assigns the CILogon user name. It reads the ePPN this plugin creates.
 - [EntraSource](https://github.com/cilogon/EntraSource): the Organizational Identity Source that brings the `upn` and `primarycampus` values in from Microsoft Entra.
-- The overview of the ITRSS solution architecture, which explains how this plugin fits with the other ITRSS Registry plugins and services, has not been written yet. It will be linked here when it exists.
+- [ITRSS solution architecture overview](https://github.com/cilogon/itrss-policies/blob/main/ITRSS-Solution-Architecture.md): how this plugin fits with the other ITRSS Registry plugins and services. The overview is in a private repository for ITRSS and CILogon staff.
 
 ## How it works
 
